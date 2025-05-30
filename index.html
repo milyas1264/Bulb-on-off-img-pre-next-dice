@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bulb ON/OFF</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Bulb ON/OFF</h1>
+
+    <!--  Bulb ki image -->
+    <img id="bulb" src="./images/bulboff.gif" width="150" />
+
+    <br /><br />
+
+    <!--  Toggle Button -->
+    <button onclick="toggleBulb()" id="btn">Turn On</button>
+
+    <script>
+      let isOn = false; //  Bulb OFF hai shuru mein
+
+      function toggleBulb() {
+        let bulb = document.getElementById("bulb"); //  Bulb wali image
+        let btn = document.getElementById("btn");   //  Button
+
+        if (isOn) {
+          // Agar bulb ON hai to OFF karo
+          bulb.src = "./images/bulboff.gif";
+          btn.textContent = "Turn On"; // Button text badlo
+        } else {
+          // Agar bulb OFF hai to ON karo
+          bulb.src = "./images/bulbon.gif";
+          btn.textContent = "Turn Off";
+        }
+
+        isOn = !isOn; //  Halat ulat do (true <-> false)
+      }
+    </script>
+
+  </body>
+</html>
