@@ -15,7 +15,7 @@
   <p id="result">Number will appear here</p>
 
   <!--  Dice Image -->
-  <img id="diceImg" src="" width="100" style="display: none;" />
+  <img id="diceImg" src="/images/1.png" width="100" style="display: none;" />
 
   <script>
     function rollDice() {
@@ -28,7 +28,7 @@
 
       // Local image path: dice1.png, dice2.png, ...
       let img = document.getElementById("diceImg");
-      img.src = `${number}.png`;
+      img.src = `1${number}.png`;
       img.style.display = "block";
     }
   </script>
