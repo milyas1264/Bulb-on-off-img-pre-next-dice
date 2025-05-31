@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Local Dice Roller</title>
+</head>
+<body style="text-align: center; margin-top: 50px; font-size: 24px;">
+
+  <h2> Local Dice Roller</h2>
+
+  <!--  Button -->
+  <button onclick="rollDice()">Roll Dice</button>
+
+  <!--  Result -->
+  <p id="result">Number will appear here</p>
+
+  <!--  Dice Image -->
+  <img id="diceImg" src="" width="100" style="display: none;" />
+
+  <script>
+    function rollDice() {
+      // Random number 1 to 6
+      let number = Math.floor(Math.random() * 6) + 1;
+
+      // Show number
+      document.getElementById("result").textContent = ` Dice Rolled: ${number}`;
+      
+
+      // Local image path: dice1.png, dice2.png, ...
+      let img = document.getElementById("diceImg");
+      img.src = `${number}.png`;
+      img.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
