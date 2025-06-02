@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Slide Dice Viewer</title>
+</head>
+<body style="text-align: center; font-size: 24px; margin-top: 50px;">
+    <button><a href="index.html" style="text-decoration: none;">Back to home</a></button>
+
+  <h2> Slide Dice images Viewer</h2>
+
+  <!-- Image Display -->
+  <img id="diceImg" width="300" height="300" src="images/dice1.png" />
+
+  <!--  Control Buttons -->
+  <div style="margin-top: 20px;">
+    <button onclick="prevImage()">⬅️ Previous</button>
+    <button onclick="nextImage()">Next ➡️</button>
+  </div>
+
+  <script>
+    //  Image Paths
+    let images = [
+      'images/dice1.png',
+      'images/dice2.png',
+      'images/dice3.png',
+      'images/dice4.png',
+      'images/dice5.png',
+      'images/dice6.png'
+    ];
+
+    let currentIndex = 0;
+
+    //  Show Current Image
+    function showImage() {
+      document.getElementById('diceImg').src = images[currentIndex];
+    }
+
+    //  Next Image
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage();
+    }
+
+    //  Previous Image
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage();
+    }
+
+    //  Auto Slide Every 3 Seconds
+    // setInterval(nextImage, 3000); // 3000ms = 3 seconds
+  </script>
+
+</body>
+</html>
