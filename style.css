@@ -13,11 +13,11 @@ body {
       height: 600px;
       margin: 40px auto;
       text-align: center;
-      border: 5px dashed aqua;
+      border: 5px dashed #0fdddd;
       padding: 20px;
     }
     button {
-        background-color: aqua;
+        background-color: rgb(33, 181, 226);
         color: blue;
         padding: 10px 10px;
         border: 4px ridge yellow;
