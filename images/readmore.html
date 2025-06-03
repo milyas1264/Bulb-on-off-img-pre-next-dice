@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Read More / Read Less</title>
+  <style>
+    body {
+      background-color: #2c343f;
+      color: #fff;
+      max-width: 600px;
+      margin: 40px auto;
+      text-align: center;
+      border: 5px dashed aqua;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+    <h1>Read More / Read Less</h1>
+  <!-- Paragraph jisme long text hoga -->
+  <p id="para"></p>
+
+  <!-- Button jise click karne par text toggle hoga -->
+  <button id="btn" style="display: none;">Read More</button>
+
+  <script>
+    // Yeh poora text hai jise hum conditionally dikhayenge
+    let fullText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin convallis urna at sapien posuere, ut efficitur arcu ultricies. Nulla facilisi. Integer efficitur, purus ut dignissim fringilla, erat lectus pharetra nulla, sed imperdiet augue magna sed.";
+
+    // Shortened version jo sirf pehle 100 characters dikhata hai
+    let shortText = fullText.slice(0, 100) + "...";
+
+    // DOM elements ko access kar rahe hain
+    let para = document.getElementById("para");
+    let btn = document.getElementById("btn");
+
+    // Agar text 100 characters se zyada hai to button show karo aur shortText dikhayo
+    if (fullText.length > 100) {
+      para.textContent = shortText;      // Short text dikhana
+      btn.style.display = "inline";      // Button ko visible banana
+    } else {
+      para.textContent = fullText;       // Agar short hai to full text dikhado
+    }
+
+    // Flag: pata karne ke liye abhi short text dikh raha hai ya full
+    let isShort = true;
+
+    // Button pe click hone par ye function chalega
+    function toggle() {
+      // Agar abhi short dikh raha hai to full show karo, warna short
+      para.textContent = isShort ? fullText : shortText;
+
+      // Button ka text bhi accordingly change karo
+      btn.textContent = isShort ? "Read Less" : "Read More";
+
+      // isShort ki value ko ulta karo (true -> false, false -> true)
+      isShort = !isShort;
+    }
+
+    // Button ko click karne par toggle function run hoga
+    btn.addEventListener("click", toggle);
+  </script>
+
+</body>
+</html>
