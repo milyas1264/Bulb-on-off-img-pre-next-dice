@@ -1,0 +1,36 @@
+a{
+    text-decoration: none;
+    color: rgb(231, 20, 231);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+body {
+      background-color: #0b1c35;
+      color: #fff;
+      max-width: 800px;
+      height: 600px;
+      margin: 40px auto;
+      text-align: center;
+      border: 5px dashed aqua;
+      padding: 20px;
+    }
+    button {
+        background-color: aqua;
+        color: blue;
+        padding: 10px 10px;
+        border: 4px ridge yellow;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+     #diceImg {
+      width: 200px;
+      display: none;
+      margin: 20px auto;   /* center horizontally */
+
+    }
+     hr{
+       border: 3px outset rgb(231, 20, 231);
+     }
